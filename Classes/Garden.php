@@ -1,5 +1,6 @@
 <?php
 
+namespace App;
 
 class Garden
 {
@@ -13,10 +14,19 @@ class Garden
             $this->plantedTrees[] = new Tree($treeType);
         }
     }
+    public function growFruits()
+    {
+        foreach($this->plantedTrees as $tree){
+            $tree->growYield();
+        }
+    }
 
     public function __construct($mainHarvester)
     {
         $this->mainHarvester = $mainHarvester;
+        $this->bucketTray =[];
+        $this->plantedTrees=[];
+
     }
 
     public function harvestYield()
@@ -26,7 +36,7 @@ class Garden
         }
         foreach ($this->mainHarvester->unloadBucket() as $type => $yield) {
             $this->bucketTray[$type] = array_merge(
-                $this->bucketTray[$type],
+                $this->bucketTray[$type] ?? [],
                 $yield
             );
         }

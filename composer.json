@@ -1,0 +1,19 @@
+{
+    "name": "vifany/orchard",
+    "description": "puk",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vifany",
+            "email": "93101238+Vifany@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+      "psr-4": {
+        "App\\": "Classes"
+      }
+    }
+}

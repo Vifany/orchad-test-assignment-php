@@ -1,5 +1,7 @@
 <?php
 
+namespace App;
+
 class Harvester
 {
     private array $fruitBucket;

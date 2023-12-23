@@ -1,11 +1,8 @@
 <?php
-require_once 'Fruit.php';
 
-enum TreeType:string
-{
-    case Apple = 'apple';
-    case Pear = 'pear';
-}
+namespace App;
+
+
 
 class Tree
 {

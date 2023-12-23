@@ -1,10 +1,6 @@
 <?php
 
-enum TreeType
-{
-    case Apple;
-    case Pear;
-}
+
 
 class Fruit
 {

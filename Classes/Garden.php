@@ -24,7 +24,7 @@ class Garden
         foreach ($this->plantedTrees as $tree) {
             $this->mainHarvester->pickFruits($tree);
         }
-        foreach($this->mainHarvester->unloadBucket() as $type=>$yield){
+        foreach ($this->mainHarvester->unloadBucket() as $type => $yield) {
             $this->bucketTray[$type] = array_merge(
                 $this->bucketTray[$type],
                 $yield
@@ -32,6 +32,19 @@ class Garden
         }
     }
 
-    
+    public function countYields(): array
+    {
+        $data = [];
+        foreach ($this->bucketTray as $fruitType => $bucket) {
+            $data[$fruitType] = [
+                'weight' => array_reduce($bucket, function ($carry, $item) {
+                    return $carry + $item->getWeight();
+                }),
+                'amount' => count($bucket)
+            ];
+        }
+
+        return $data;
+    }
 
 }

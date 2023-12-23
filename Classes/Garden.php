@@ -16,7 +16,7 @@ class Garden
     }
     public function growFruits()
     {
-        foreach($this->plantedTrees as $tree){
+        foreach ($this->plantedTrees as $tree) {
             $tree->growYield();
         }
     }
@@ -24,9 +24,8 @@ class Garden
     public function __construct($mainHarvester)
     {
         $this->mainHarvester = $mainHarvester;
-        $this->bucketTray =[];
-        $this->plantedTrees=[];
-
+        $this->bucketTray = [];
+        $this->plantedTrees = [];
     }
 
     public function harvestYield()
@@ -56,5 +55,4 @@ class Garden
 
         return $data;
     }
-
 }

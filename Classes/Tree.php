@@ -2,8 +2,6 @@
 
 namespace App;
 
-
-
 class Tree
 {
     private string $treeId;
@@ -52,5 +50,4 @@ class Tree
     {
         return array_pop($this->fruitYield);
     }
-
 }

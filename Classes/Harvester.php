@@ -6,30 +6,30 @@ class Harvester
 {
     private array $fruitBucket;
 
-    public function pickFruits(Tree $tree): void{
-        while(true){
+    public function pickFruits(Tree $tree): void
+    {
+        while (true) {
             $claw = $tree->dropFruit();
-            if ($claw==null) {
+            if ($claw == null) {
                 break;
             }
-            $this->fruitBucket[]=$claw;
+            $this->fruitBucket[] = $claw;
         }
     }
 
-    public function unloadBucket():array
+    public function unloadBucket(): array
     {
-        $bucketTray =[];
-        foreach(TreeType::cases() as $tType){
-            $bucketTray[$tType->value]=[];
+        $bucketTray = [];
+        foreach (TreeType::cases() as $tType) {
+            $bucketTray[$tType->value] = [];
         }
-        while (true){
+        while (true) {
             $fruit = array_pop($this->fruitBucket);
-            if ($fruit == null){
+            if ($fruit == null) {
                 break;
-                }
-            $bucketTray[$fruit->getType()->value][]=$fruit;
+            }
+            $bucketTray[$fruit->getType()->value][] = $fruit;
         }
         return $bucketTray;
     }
-
 }

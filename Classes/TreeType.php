@@ -2,7 +2,7 @@
 
 namespace App;
 
-enum TreeType:string
+enum TreeType: string
 {
     case Apple = 'apple';
     case Pear = 'pear';
